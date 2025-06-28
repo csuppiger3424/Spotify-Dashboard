@@ -1,12 +1,40 @@
-# React + Vite
+# Spotify Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application that lets you explore your Spotify listening habits, filter your top tracks, and create custom playlists—all powered by the Spotify Web API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Spotify Login:** Secure OAuth login with your Spotify account.
+- **Top Tracks Dashboard:** View your top tracks with filters for artist, time range, explicit content, and more.
+- **Custom Playlists:** Instantly create Spotify playlists from your filtered tracks.
+- **Playlist & User Storage:** All created playlists and user profiles are saved to a MongoDB database for future reference.
+- **Modern UI:** Built with React and Vite for a fast, responsive experience.
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Login:**  
+   Click "Login to Spotify" to authenticate via Spotify's OAuth flow.
+
+2. **Dashboard:**  
+   After login, your top tracks are fetched from Spotify. Use filters to customize your view.
+
+3. **Create Playlist:**  
+   Click "Create Playlist" to save the current filtered tracks as a new Spotify playlist. The playlist and your user info are also saved to the backend database.
+
+4. **Backend:**  
+   The backend (Node.js/Express) handles Spotify API requests, user and playlist storage, and token management. MongoDB is used for persistent storage.
+
+## Tech Stack
+
+- **Frontend:** React, Vite, Axios, CSS
+- **Backend:** Node.js, Express, Axios, dotenv, Mongoose (MongoDB)
+- **Database:** MongoDB (local or Atlas)
+- **Authentication:** Spotify OAuth 2.0
+
+## Getting Started
+
+1. **Clone the repository**
+2. **Install dependencies** in both `backend` and `frontend` folders.
+3. **Set up your `.env` file** in the backend with your Spotify API credentials and MongoDB URI.
+4. **Start MongoDB** (locally or use Atlas).
+5. **Run the backend server:**
